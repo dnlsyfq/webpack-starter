@@ -323,6 +323,12 @@ console.log( newFn() );
 let getId = _ => 123
 ```
 
+### this 
+* owner of function we are executing 
+* arrow functions do not have their own this value 
+
+
+
 
 
 

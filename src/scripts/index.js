@@ -175,15 +175,28 @@
 //
 // console.log( greeting.getMessage() );
 
-function setupCounter(val){
-    return function counter(){
-        return val++;
-    }
-}
+// function setupCounter(val){
+//     return function counter(){
+//         return val++;
+//     }
+// }
+//
+// let counter1 = setupCounter(0);
+// console.log(counter1());
+// console.log(counter1());
+//
+// let counter2 = setupCounter(10);
+// console.log(counter2());
 
-let counter1 = setupCounter(0);
-console.log(counter1());
-console.log(counter1());
+let message = {
+    name: 'John',
+    regularFunction: function(){
+        console.log(`Hello ${this.name}`);
+    },
+    arrowFunction: () => console.log(`Hi ${this.name}`)
+};
 
-let counter2 = setupCounter(10);
-console.log(counter2());
+message.regularFunction();
+message.arrowFunction();
+
+
