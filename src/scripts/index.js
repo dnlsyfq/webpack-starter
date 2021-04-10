@@ -62,12 +62,101 @@
 //
 // let carIds = [1,2,3,4,5,6];
 // startCars(...carIds);
+//
+// let i = 0;
+// for(; i < 12 ; i++){
+//   if(i === 8){
+//     break
+//   }
+// }
+//
+// console.log(i);
 
-let i = 0;
-for(; i < 12 ; i++){
-  if(i === 8){
-    break
-  }
-}
+// let userSettings = {name:'Joe'};
+// let defaultSettings = {name:'Default'};
+//
+// console.log(userSettings && defaultSettings);
+// console.log(userSettings || defaultSettings);
 
-console.log(i);
+// console.log( 5 > 44 ? 'yes':'no');
+
+// function startCar(carId){
+//   let message = 'Starting...';
+//   let startFn = function turnkey(){
+//     console.log(message);
+//   };
+//   startFn();
+// }
+//
+// startCar(123);
+
+// let app = (
+//     function(){
+//       let carId = 123;
+//       console.log('in function');
+//       return {};
+//     }
+// )();
+//
+// console.log(app);
+
+// let app = (
+//     function(){
+//       let carId = 123;
+//       let getId = function(){
+//         return carId;
+//       };
+//       return {
+//         getId: getId
+//       };
+//     })();
+//
+// console.log( app.getId());
+
+// let o = {
+//   carId:123,
+//   getId:function(){
+//     return this.carId;
+//   }
+// };
+//
+// console.log(o.getId());
+//
+// let o = {
+//   carId: 123,
+//   getId: function(){
+//     return this.carId;
+//   }
+// };
+//
+// let newCar = {carId: 456};
+//
+// console.log( o.getId.call(newCar) );
+//
+//
+
+// let o = {
+//   carId:123,
+//   getId:function(prefix){
+//     return `${prefix} ${this.carId}`;
+//   //      return prefix + this.carId ;
+//   }
+// };
+//
+// let newCar = {carId: 456};
+//
+// console.log( o.getId.apply(newCar, ['ID: ']));
+
+// let o = {
+//   carId:123,
+//   getId: function (){
+//     return this.carId;
+//   }
+// };
+//
+// let newCar = { carId:456 };
+//
+// let newFn = o.getId.bind(newCar);
+//
+// console.log( newFn() );
+

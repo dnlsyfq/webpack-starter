@@ -158,3 +158,142 @@ for(; i < 12 ; i++){
 console.log(i);
 ```
 
+### Unary Operators
+
+* string to numeric
+```
++var1
+
+-var1
+```
+
+```
+let userSettings = {name:'Joe'};
+let defaultSettings = {name:'Default'};
+
+console.log(userSettings && defaultSettings);  // return Default
+console.log(userSettings || defaultSettings); // return Joe
+```
+
+### Conditional Operator
+
+console.log( 5 > 44 ? 'yes':'no');
+
+## Function scope
+
+* IIFE , Immediately Invoked Function Expression
+
+```
+function(){
+    console.log('in function');
+}
+```
+
+```
+(
+    function(){
+        console.log('in function');
+    }
+)();
+```
+
+* closure 
+```
+let app = (
+    function(){
+      let carId = 123;
+      console.log('in function');
+      return {};
+    }
+)();
+
+console.log(app);
+```
+
+```
+let app = (
+    function(){
+      let carId = 123;
+      let getId = function(){
+        return carId;
+      };
+      return {
+        getId: getId
+      };
+    })();
+
+console.log( app.getId());
+```
+
+### this 
+```
+let o = {
+    carId:123,
+    getId:function(){
+        return this.carId;
+    }
+};
+
+console.log(o.getId());
+```
+
+### call 
+```
+let o = {
+carId: 123,
+getId: function(){
+return this.carId;
+}
+};
+
+let newCar = {carId: 456};
+
+console.log( o.getId.call(newCar) );
+
+```
+### apply
+* similar to call 
+* can pass arguments 
+```
+let o = {
+  carId:123,
+  getId:function(prefix){
+    return `${prefix} ${this.carId}`;
+  //      return prefix + this.carId ;
+  }
+};
+
+let newCar = {carId: 456};
+
+console.log( o.getId.apply(newCar, ['ID: ']));
+
+```
+
+### bind 
+* create copy of function 
+```
+let o = {
+  carId:123,
+  getId: function (){
+    return this.carId;
+  }
+};
+
+let newCar = { carId:456 };
+
+let newFn = o.getId.bind(newCar);
+
+console.log( newFn() );
+```
+
+### arrow function
+* doesnt have this 
+
+```
+let getId = _ => 123
+```
+
+
+
+
+
