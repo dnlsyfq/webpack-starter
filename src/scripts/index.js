@@ -188,15 +188,58 @@
 // let counter2 = setupCounter(10);
 // console.log(counter2());
 
-let message = {
-    name: 'John',
-    regularFunction: function(){
-        console.log(`Hello ${this.name}`);
-    },
-    arrowFunction: () => console.log(`Hi ${this.name}`)
-};
+// let message = {
+//     name: 'John',
+//     regularFunction: function(){
+//         console.log(`Hello ${this.name}`);
+//     },
+//     arrowFunction: () => console.log(`Hi ${this.name}`)
+// };
+//
+// message.regularFunction();
+// message.arrowFunction();
 
-message.regularFunction();
-message.arrowFunction();
+// let person1 = {name:'John',age:22};
+// let person2 = {name:'Mary',age:26};
+//
+// let sayHi = function (){
+//     console.log(`Hi, ${this.name}`);
+// };
+//
+// sayHi.call(person1);
+// sayHi.call(person2);
 
+// let person1 = {name:'John',age:22};
+// let sayHi = function(message){
+//     console.log(`${message} ${this.name}`);
+// };
+//
+// sayHi.call(person1,'Hi');
 
+// function introduction(name,profession){
+//     console.log(`My name is ${name} and I am a ${profession}.`);
+//     console.log(this);
+// }
+//
+// introduction('John','student');
+//
+// introduction.apply(undefined,['Mary','Lawyer']);
+//
+// introduction.call(undefined,'James','artist');
+
+// let person1 = {
+//     name:'Mary',
+//     getName:function(){
+//         return `${this.name}`;
+//     }
+// };
+//
+// let person2 = {name:'John'};
+//
+// let getNameCopy = person1.getName.bind(person2);
+//
+// console.log(getNameCopy());
+
+let x = 1;
+let y = 2;
+console.log(eval('x + y + 1'));

@@ -269,6 +269,8 @@ console.log(o.getId());
 
 ### call 
 function properties
+* accept argument list 
+* use call when dealing with individual arguments of varying type
 ```
 let o = {
     carId: 123,
@@ -282,9 +284,31 @@ let newCar = {carId: 456};
 console.log( o.getId.call(newCar) );
 
 ```
+
+```
+let person1 = {name:'John',age:22};
+let person2 = {name:'Mary',age:26};
+
+let sayHi = function (){
+    console.log(`Hi, ${this.name}`);
+};
+
+sayHi.call(person1);
+sayHi.call(person2);
+```
+
+```
+let person1 = {name:'John',age:22};
+let sayHi = function(message){
+    console.log(`${message} ${this.name}`);
+};
+
+sayHi.call(person1,'Hi');
+```
 ### apply
 * similar to call 
-* can pass arguments 
+* accepts a single array of arguments 
+* use apply when input parameter in form of array of similar values
 ```
 let o = {
   carId:123,
@@ -300,8 +324,20 @@ console.log( o.getId.apply(newCar, ['ID: ']));
 
 ```
 
+```
+function introduction(name,profession){
+    console.log(`My name is ${name} and I am a ${profession}.`);
+    console.log(this);
+}
+
+introduction('John','student');
+
+introduction.apply(undefined,['Mary','Lawyer']);
+
+introduction.call(undefined,'James','artist');
+```
 ### bind 
-* create copy of function 
+* create copy of function and change the value 
 ```
 let o = {
   carId:123,
@@ -315,6 +351,51 @@ let newCar = { carId:456 };
 let newFn = o.getId.bind(newCar);
 
 console.log( newFn() );
+```
+
+```
+let person1 = {
+    name:'Mary',
+    getName:function(){
+        return `${this.name}`;
+    }
+};
+
+let person2 = {name:'John'};
+
+let getNameCopy = person1.getName.bind(person2);
+
+console.log(getNameCopy());
+```
+### function built in 
+
+* eval 
+```
+let x = 1;
+let y = 2;
+console.log(eval('x + y + 1'));
+```
+
+* parseInt
+```
+parseInt('F',16)
+parseInt('15',10)
+parseInt('Hi',10)
+```
+
+```
+parseFloat('3.99')
+```
+
+* return hexadecimal
+```
+escape('text')
+escape(' ') // %20
+```
+
+* unescape
+```
+unescape('%20')
 ```
 
 ### arrow function
