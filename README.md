@@ -268,12 +268,13 @@ console.log(o.getId());
 ```
 
 ### call 
+function properties
 ```
 let o = {
-carId: 123,
-getId: function(){
-return this.carId;
-}
+    carId: 123,
+    getId: function(){
+        return this.carId;
+    }
 };
 
 let newCar = {carId: 456};
@@ -327,6 +328,18 @@ let getId = _ => 123
 * owner of function we are executing 
 * arrow functions do not have their own this value 
 
+```
+let message = {
+    name: 'John',
+    regularFunction: function(){
+        console.log(`Hello ${this.name}`);
+    },
+    arrowFunction: () => console.log(`Hi ${this.name}`)
+};
+
+message.regularFunction();
+message.arrowFunction();
+```
 
 
 
