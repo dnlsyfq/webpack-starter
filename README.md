@@ -115,6 +115,29 @@ console.log(id,style);
 ```
 
 ### Spread Syntax
+allow function to take an array as arg and spread out its elements 
+
+```
+function greet(person1,person2){
+  console.log(`Hello ${person1} and ${person2}`);
+}
+
+let names = ['John','Mary'];
+
+greet(...names);
+```
+
+```
+function display(char1,char2,char3,char4){
+  console.log(char1,char2,char3,char4);
+}
+
+
+let letters = 'abcd';
+
+
+display(...letters);
+```
 
 ```
 function startCars(car1,car2,car3){
@@ -422,8 +445,39 @@ message.regularFunction();
 message.arrowFunction();
 ```
 
+## function
 
+### default parameters 
 
+```
+function sayHi(name='World'){
+  console.log(`Hello ${name}`);
+}
 
+sayHi();
+sayHi('John');
+
+```
+
+### Rest Parameters
+define function to store multiple arg in a single array 
+useful invoking function with multiple arg 
+
+```
+let sayHi = function greet(...names){
+  names.forEach(name => console.log(`Hi ${name}`));
+}
+
+sayHi('Mary','John','James');
+```
+
+```
+let sayHi = function greet(message,...names){
+  console.log(`${message} everyone!`);
+  names.forEach(name => console.log(`Hi ${name}`))
+}
+
+sayHi('Welcome','Mary','John','James');
+```
 
 
